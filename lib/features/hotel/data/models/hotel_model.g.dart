@@ -21,7 +21,7 @@ HotelModel _$HotelModelFromJson(Map<String, dynamic> json) =>
 
 
 AboutTheHotelModel _$AboutTheHotelModelFromJson(
-        Map<String, dynamic> json) =>
+    Map<String, dynamic> json) =>
     AboutTheHotelModel(
       description: json['description'],
       peculiarities: json['peculiarities'],

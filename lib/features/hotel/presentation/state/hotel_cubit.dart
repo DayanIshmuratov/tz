@@ -17,9 +17,9 @@ class HotelCubit extends Cubit<HotelState> {
     try {
       final result = await getHotel();
       emit(HotelLoaded(hotel: result));
-    } on Exception catch (e, s){
-      log(e.toString());
-      emit(HotelError());
+    } catch (e, s){
+      log(e.toString(), stackTrace: s);
+      emit(HotelError(message: e.toString()));
     }
   }
 }

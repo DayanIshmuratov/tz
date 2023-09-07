@@ -1,5 +1,6 @@
 
 import 'package:get_it/get_it.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:tz/features/hotel/data/datasources/hotel_api_service.dart';
 import 'package:tz/features/hotel/data/datasources/hotel_remote_datasource.dart';
 import 'package:tz/features/hotel/data/repositories/repository_impl.dart';
@@ -16,10 +17,11 @@ Future<void> init() async {
   
   sl.registerLazySingleton(() => GetHotel(hotelRepository: sl()));
 
-  sl.registerLazySingleton<HotelRepository>(() => HotelRepositoryImpl(hotelRemoteDataSource: sl()));
+  sl.registerLazySingleton<HotelRepository>(() => HotelRepositoryImpl(hotelRemoteDataSource: sl(), internetConnectionChecker: sl()));
 
   sl.registerLazySingleton<HotelRemoteDataSource>(() => HotelRemoteDataSourceImpl(client: sl(), hotelApiService: sl()));
 
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => HotelApiService(Dio(BaseOptions(contentType: 'application/json'))));
+  sl.registerLazySingleton(() => InternetConnectionChecker());
 }

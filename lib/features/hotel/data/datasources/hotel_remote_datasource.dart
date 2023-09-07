@@ -17,13 +17,6 @@ class HotelRemoteDataSourceImpl implements HotelRemoteDataSource {
 
   @override
   Future<HotelModel> getHotel() async {
-    return await hotelApiService.getHotel();
-    // final response = await client.get(Uri.parse('https://run.mocky.io/v3/35e0d18e-2521-4f1b-a575-f0fe366f66e3')
-    //     , headers: {'Content-Type': 'application/json'});
-    // if (response.statusCode == 200) {
-    //   return HotelModel.fromJson(jsonDecode(response.body));
-    // } else {
-    //   throw ServerException();
-    // }
+      return await hotelApiService.getHotel();
   }
 }

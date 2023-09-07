@@ -20,10 +20,13 @@ class HotelLoaded extends HotelState {
 
   const HotelLoaded({required this.hotel});
   @override
-  List<Object> get props => [];
+  List<Object> get props => [hotel];
 }
 
 class HotelError extends HotelState {
+  final String message;
+
+  const HotelError({required this.message});
   @override
-  List<Object> get props => [];
+  List<Object> get props => [message];
 }

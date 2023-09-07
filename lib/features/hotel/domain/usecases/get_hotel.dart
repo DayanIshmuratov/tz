@@ -8,6 +8,6 @@ class GetHotel {
   GetHotel({required this.hotelRepository});
 
   Future<HotelEntity> call() async {
-    return await hotelRepository.getData();
+    return await hotelRepository.getHotel();
   }
 }

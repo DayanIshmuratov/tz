@@ -16,7 +16,7 @@ class _ImageSliderState extends State<ImageSlider> {
   int activePage = 0;
   @override
   void initState() {
-    _pageController = PageController(initialPage: activePage);
+    _pageController = PageController(initialPage: activePage, viewportFraction: 1.1);
     super.initState();
   }
 
@@ -41,7 +41,7 @@ class _ImageSliderState extends State<ImageSlider> {
             },
             itemBuilder: (context, pagePosition) {
               return Container(
-                margin: const EdgeInsets.all(4),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(image: NetworkImage('${widget.images[pagePosition]}'),fit: BoxFit.cover,),

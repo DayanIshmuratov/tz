@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tz/common/templates/colors/app_colors.dart';
 import 'package:tz/service_locator/service_locator.dart';
-
 import 'features/hotel/presentation/page/hotel_page.dart';
 import 'package:tz/service_locator/service_locator.dart' as di;
-
 import 'features/hotel/presentation/state/hotel_cubit.dart';
 
 void main() async {

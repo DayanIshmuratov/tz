@@ -1,3 +1,20 @@
 class ServerException implements Exception {
-  static const String message = 'Ошибка получения данных из сервера';
+
+  final String message;
+
+  ServerException({required this.message});
+
+}
+
+class NetworkException implements Exception {
+
+  final String message;
+
+  NetworkException({required this.message});
+
+  String toString() {
+    String message = this.message;
+    if (message == null) return "Ошибка";
+    return "$message";
+  }
 }
