@@ -8,5 +8,5 @@ part 'room_api_service.g.dart';
 abstract class RoomApiService {
   factory RoomApiService(Dio dio) = _RoomApiService;
   @GET('f9a38183-6f95-43aa-853a-9c83cbb05ecd')
-  Future<List<RoomModel>> getRooms();
+  Future<RoomsModel> getRooms();
 }

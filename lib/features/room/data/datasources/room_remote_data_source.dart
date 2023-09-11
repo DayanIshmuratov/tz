@@ -3,14 +3,15 @@ import 'package:tz/features/room/data/datasources/room_api_service.dart';
 import '../models/room_model.dart';
 
 abstract class RoomRemoteDataSource {
-  Future<List<RoomModel>> getRooms();
+  Future<RoomsModel> getRooms();
 }
 
 class RoomRemoteDataSourceImpl implements RoomRemoteDataSource {
-  final RoomApiService apiService;
+  final RoomApiService roomApiService;
 
-  RoomRemoteDataSourceImpl({required this.apiService});
+  RoomRemoteDataSourceImpl({required this.roomApiService});
   @override
-  Future<List<RoomModel>> getRooms() {
+  Future<RoomsModel> getRooms() {
+    return roomApiService.getRooms();
   }
 }

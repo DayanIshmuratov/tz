@@ -15,7 +15,7 @@ HotelModel _$HotelModelFromJson(Map<String, dynamic> json) =>
       priceForIt: json['price_for_it'],
       rating: json['rating'],
       ratingName: json['rating_name'],
-      imageUrls: json['image_urls'],
+      imageUrls: json['image_urls'].cast<String>(),
       aboutTheHotel: _$AboutTheHotelModelFromJson(json['about_the_hotel']),
     );
 
@@ -24,5 +24,5 @@ AboutTheHotelModel _$AboutTheHotelModelFromJson(
     Map<String, dynamic> json) =>
     AboutTheHotelModel(
       description: json['description'],
-      peculiarities: json['peculiarities'],
+      peculiarities: json['peculiarities'].cast<String>(),
     );

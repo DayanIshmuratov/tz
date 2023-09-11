@@ -4,11 +4,20 @@ class HotelEntity {
   final int id;
   final String name;
   final String address;
+  @JsonKey(name: 'minimal_price')
   final int minimalPrice;
+
+  @JsonKey(name: 'price_for_it')
   final String priceForIt;
+
   final int rating;
+  @JsonKey(name: 'rating_name')
   final String ratingName;
-  final List<dynamic> imageUrls;
+
+  @JsonKey(name: 'image_urls')
+  final List<String> imageUrls;
+
+  @JsonKey(name: 'about_the_hotel')
   final AboutTheHotelEntity aboutTheHotel;
 
   const HotelEntity({
@@ -27,7 +36,7 @@ class HotelEntity {
 
 class AboutTheHotelEntity {
   final String description;
-  final List<dynamic> peculiarities;
+  final List<String> peculiarities;
 
   const AboutTheHotelEntity({
     required this.description,

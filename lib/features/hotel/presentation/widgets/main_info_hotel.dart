@@ -12,6 +12,7 @@ class MainInfoHotel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(16.0),
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +42,6 @@ class MainInfoHotel extends StatelessWidget {
             ]
           ),
           ),
-          const SizedBox(height: 8,),
         ],
       ),
     );

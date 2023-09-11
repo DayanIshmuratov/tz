@@ -1,9 +1,10 @@
+import 'package:equatable/equatable.dart';
 import 'package:tz/features/hotel/domain/entities/hotel_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'hotel_model.g.dart';
 
 @JsonSerializable()
-class HotelModel extends HotelEntity {
+class HotelModel extends HotelEntity with EquatableMixin {
   const HotelModel({
     required id,
     required name,
@@ -28,6 +29,19 @@ class HotelModel extends HotelEntity {
 
   factory HotelModel.fromJson(Map<String, dynamic> json) =>
       _$HotelModelFromJson(json);
+
+  @override
+  List<Object?> get props => [
+    id,
+    name,
+    address,
+    minimalPrice,
+    priceForIt,
+    rating,
+    ratingName,
+    imageUrls,
+    aboutTheHotel
+  ];
 }
 
 

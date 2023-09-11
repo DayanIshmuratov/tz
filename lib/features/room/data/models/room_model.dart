@@ -4,7 +4,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'room_model.g.dart';
 
 @JsonSerializable()
-class RoomModel extends RoomEntity with EquatableMixin{
+class RoomsModel extends RoomsEntity with EquatableMixin {
+  RoomsModel({required rooms}) : super(rooms: rooms);
+
+  factory RoomsModel.fromJson(Map<String, dynamic> json) => _$RoomsModelFromJson(json);
+}
+
+@JsonSerializable()
+class RoomModel extends RoomEntity with EquatableMixin {
   RoomModel({
     required id,
     required name,

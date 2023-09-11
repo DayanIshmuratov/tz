@@ -15,5 +15,12 @@ extension CustomStyles on TextTheme {
       fontWeight: FontWeight.w500,
     );
   }
+
+  TextStyle get textFieldLabelStyle {
+    return const TextStyle(
+      fontSize: 17.0,
+      color: Color(0xFFA9ABB7),
+    );
+  }
 }
 

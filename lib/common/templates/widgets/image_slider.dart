@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tz/common/templates/colors/app_colors.dart';
 
 class ImageSlider extends StatefulWidget {
-  final List<dynamic> images;
+  final List<String> images;
 
   const ImageSlider({Key? key, required this.images}) : super(key: key);
 
@@ -44,7 +44,7 @@ class _ImageSliderState extends State<ImageSlider> {
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(image: NetworkImage('${widget.images[pagePosition]}'),fit: BoxFit.cover,),
+                  image: DecorationImage(image: NetworkImage(widget.images[pagePosition]),fit: BoxFit.cover,),
                 ),
               );
             },

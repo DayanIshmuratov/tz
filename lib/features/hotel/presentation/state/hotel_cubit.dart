@@ -12,7 +12,7 @@ class HotelCubit extends Cubit<HotelState> {
   final GetHotel getHotel;
   HotelCubit({required this.getHotel}) : super(HotelInitial());
 
-  Future<void> get() async {
+  Future<void> getData() async {
     emit(HotelLoading());
     try {
       final result = await getHotel();

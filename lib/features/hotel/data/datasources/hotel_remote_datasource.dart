@@ -11,9 +11,9 @@ abstract class HotelRemoteDataSource {
 }
 
 class HotelRemoteDataSourceImpl implements HotelRemoteDataSource {
-  final http.Client client;
+
   final HotelApiService hotelApiService;
-  HotelRemoteDataSourceImpl({required this.client, required this.hotelApiService});
+  HotelRemoteDataSourceImpl({required this.hotelApiService});
 
   @override
   Future<HotelModel> getHotel() async {

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:tz/features/hotel/data/datasources/hotel_remote_datasource.dart';
 import 'package:tz/features/hotel/domain/entities/hotel_entity.dart';
 import 'package:tz/features/hotel/domain/repositories/repository.dart';
@@ -15,10 +17,12 @@ class HotelRepositoryImpl implements HotelRepository {
     if (await internetConnectionChecker.hasConnection) {
       try {
       return await hotelRemoteDataSource.getHotel();
-    }  catch (e) {
+    }  catch (e, s) {
+      log(e.toString(), stackTrace: s);
       throw ServerException(message: 'Ошибка получения данных отеля');
+      }
     }
-    } else {
+    else {
       throw NetworkException(message: 'Ошибка соединения');
     }
   }

@@ -10,7 +10,7 @@ class RatingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: const Color(0x33FFC700),
         borderRadius: BorderRadius.circular(5),
